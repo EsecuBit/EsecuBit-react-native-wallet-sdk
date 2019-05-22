@@ -21,7 +21,7 @@
     "stream-browserify": "^2.0.2",
     "vm-browserify": "^1.1.0",
     "jsc-android": "^241213.1.0",
-    "esecubit-wallet-sdk": "git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git"
+    "esecubit-wallet-sdk": "git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git#develop"
   },
   "peerDependencies": {
     "react": "^16.8.3",
