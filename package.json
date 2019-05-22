@@ -1,0 +1,30 @@
+
+{
+  "name": "esecubit-react-native-wallet-sdk",
+  "version": "1.0.0",
+  "description": "SDK For EsecuBit React Native Wallet App",
+  "main": "index.js",
+  "keywords": [
+    "EsecuBit",
+    "react-native",
+    "wallet-sdk"
+  ],
+  "author": "EsecuBit",
+  "license": "LGPLv3",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bigdecimal": "^0.6.1",
+    "bigi": "^1.4.2",
+    "buffer": "^5.2.0",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.0.0",
+    "stream-browserify": "^2.0.2",
+    "vm-browserify": "^1.1.0",
+    "jsc-android": "^241213.1.0",
+    "esecubit-wallet-sdk": "git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-native": "^0.59.8"
+  }
+}
