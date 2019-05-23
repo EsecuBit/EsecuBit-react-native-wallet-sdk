@@ -22,6 +22,7 @@
     "vm-browserify": "^1.1.0",
     "jsc-android": "^241213.1.0",
     "react-navigation": "^3.10.2",
+    "react-native-gesture-handler": "^1.2.1",
     "react-navigation-redux-helpers": "^3.0.2",
     "react-redux": "^5.1.0",
     "redux": "^4.0.1",
