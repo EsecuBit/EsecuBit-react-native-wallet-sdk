@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E202C3492297E99F006CD2C0 /* libCoreBitcoin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E202C3482297E99F006CD2C0 /* libCoreBitcoin.a */; };
+		E202C34B2297E9A3006CD2C0 /* libEsHDWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E202C34A2297E9A3006CD2C0 /* libEsHDWallet.a */; };
 		E2506CC72296AAF90048ED8D /* NSData+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = E2506CBF2296AAF80048ED8D /* NSData+Hex.m */; };
 		E2506CC82296AAF90048ED8D /* BtScanHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E2506CC12296AAF80048ED8D /* BtScanHelper.m */; };
 		E2506CC92296AAF90048ED8D /* BtDeviceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E2506CC22296AAF80048ED8D /* BtDeviceModule.m */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNEsecuBitReactNativeWalletSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNEsecuBitReactNativeWalletSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E202C3482297E99F006CD2C0 /* libCoreBitcoin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCoreBitcoin.a; path = libs/libCoreBitcoin.a; sourceTree = "<group>"; };
+		E202C34A2297E9A3006CD2C0 /* libEsHDWallet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEsHDWallet.a; path = libs/libEsHDWallet.a; sourceTree = "<group>"; };
 		E2506CBD2296AAF80048ED8D /* BtDeviceModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtDeviceModule.h; sourceTree = "<group>"; };
 		E2506CBE2296AAF80048ED8D /* NSData+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hex.h"; sourceTree = "<group>"; };
 		E2506CBF2296AAF80048ED8D /* NSData+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hex.m"; sourceTree = "<group>"; };
@@ -39,8 +43,8 @@
 		E2506CC52296AAF90048ED8D /* DDRSAWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRSAWrapper.h; sourceTree = "<group>"; };
 		E2506CC62296AAF90048ED8D /* DDRSAWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRSAWrapper.m; sourceTree = "<group>"; };
 		E2506D032296AFE50048ED8D /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
-		E293593E229795040051AF43 /* ESSerialNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSerialNumber.h; sourceTree = "<group>"; };
-		E293593F229795040051AF43 /* EsHDWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EsHDWallet.h; sourceTree = "<group>"; };
+		E2E63A602297E2F90015DFD3 /* EsHDWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EsHDWallet.h; sourceTree = "<group>"; };
+		E2E63A612297E2F90015DFD3 /* ESSerialNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSerialNumber.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E202C3492297E99F006CD2C0 /* libCoreBitcoin.a in Frameworks */,
+				E202C34B2297E9A3006CD2C0 /* libEsHDWallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,17 +75,27 @@
 				E2506CBD2296AAF80048ED8D /* BtDeviceModule.h */,
 				E2506CC22296AAF80048ED8D /* BtDeviceModule.m */,
 				E2506CC42296AAF90048ED8D /* BtScanHelper.h */,
+				E2E63A602297E2F90015DFD3 /* EsHDWallet.h */,
+				E2E63A612297E2F90015DFD3 /* ESSerialNumber.h */,
 				E2506CC12296AAF80048ED8D /* BtScanHelper.m */,
 				E2506CC02296AAF80048ED8D /* CryptoModule.h */,
 				E2506CC32296AAF90048ED8D /* CryptoModule.m */,
 				E2506CC52296AAF90048ED8D /* DDRSAWrapper.h */,
 				E2506CC62296AAF90048ED8D /* DDRSAWrapper.m */,
 				E2506CBE2296AAF80048ED8D /* NSData+Hex.h */,
-				E293593F229795040051AF43 /* EsHDWallet.h */,
-				E293593E229795040051AF43 /* ESSerialNumber.h */,
 				E2506CBF2296AAF80048ED8D /* NSData+Hex.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				E202C3472297E99F006CD2C0 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		E202C3472297E99F006CD2C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E202C34A2297E9A3006CD2C0 /* libEsHDWallet.a */,
+				E202C3482297E99F006CD2C0 /* libCoreBitcoin.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +212,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -242,8 +259,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -258,7 +276,10 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNEsecuBitReactNativeWalletSdk;
 				SKIP_INSTALL = YES;
@@ -274,7 +295,10 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNEsecuBitReactNativeWalletSdk;
 				SKIP_INSTALL = YES;
