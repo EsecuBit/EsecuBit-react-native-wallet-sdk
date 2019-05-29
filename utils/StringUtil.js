@@ -65,7 +65,7 @@ export default class StringUtil {
    * Format timestamp to date(yyyy-MM-dd:HH:mm:ss)
    * @param {string} time
    */
-  static formatTimeStamp(time) {
+  static formatTimeStamp(time, shortFormat=false) {
     let date = new Date(time)
     let yyyy = date.getFullYear()
     let month = date.getMonth() + 1
@@ -83,17 +83,25 @@ export default class StringUtil {
       ? date.getSeconds()
       : '0' + date.getSeconds()
     let arr = []
-    arr.push(yyyy)
-    arr.push('-')
-    arr.push(MM)
-    arr.push('-')
-    arr.push(dd)
-    arr.push(' ')
-    arr.push(HH)
-    arr.push(':')
-    arr.push(mm)
-    arr.push(':')
-    arr.push(ss)
+    if (!shortFormat) {
+      arr.push(yyyy)
+      arr.push('-')
+      arr.push(MM)
+      arr.push('-')
+      arr.push(dd)
+      arr.push(' ')
+      arr.push(HH)
+      arr.push(':')
+      arr.push(mm)
+      arr.push(':')
+      arr.push(ss)
+    }else {
+      arr.push(dd)
+      arr.push("/")
+      arr.push(MM)
+      arr.push("/")
+      arr.push(yyyy)
+    }
     return arr.join('')
   }
 
