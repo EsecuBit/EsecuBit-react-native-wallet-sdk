@@ -450,10 +450,10 @@ isarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-jsc-android@^241213.1.0:
-  version "241213.1.0"
-  resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-241213.1.0.tgz#8f940d7c7f6bebf14eda32bef42a76182e336452"
-  integrity sha512-AH8NYyMNLNhcUEF97QbMxPNLNW+oiSBlvm1rsMNzgJ1d5TQzdh/AOJGsxeeESp3m9YIWGLCgUvGTVoVLs0p68A==
+jsc-android@^216113.0.0:
+  version "216113.0.3"
+  resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-216113.0.3.tgz#fd655b06cacb84b57abe281641d44a39ac54480f"
+  integrity sha512-x5na/rMdZk3wBsavoOw35BBEzB8coFnTioDdFur040zMR6ShkYCLJXe7junb5vNH58ZsbWj/BrTa7cPnbvV8ug==
 
 just-curry-it@^3.1.0:
   version "3.1.0"
