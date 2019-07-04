@@ -1,5 +1,5 @@
 import IDatabase from 'esecubit-wallet-sdk/src/sdk/data/database/IDatabase'
-import { D } from 'esecubit-wallet-sdk'
+import {D} from 'esecubit-wallet-sdk'
 import Realm from 'realm'
 import AccountSchema from './AccountSchema'
 import AddressInfoSchema from './AddressInfoSchema'
@@ -172,7 +172,7 @@ class RealmDB extends IDatabase {
     }))
   }
 
-  removeTx (account, addressInfos, txInfo, updateUtxos = [], removeUtxos = []) {
+  removeTx(account, addressInfos, txInfo, updateUtxos = [], removeUtxos = []) {
     account = wrapper.account.wrap(account)
     addressInfos = wrapper.addressInfo.wraps(addressInfos)
     txInfo = wrapper.txInfo.wrap(txInfo)
@@ -194,7 +194,7 @@ class RealmDB extends IDatabase {
   }
 
   getFee(coinType) {
-    let filterQuery = RealmDB.makeQuery({ coinType })
+    let filterQuery = RealmDB.makeQuery({coinType})
     return Realm.open(this._config).then(realm => {
       let fee = realm.objects('Fee').filtered(filterQuery)[0]
       if (!fee) return null
@@ -204,11 +204,13 @@ class RealmDB extends IDatabase {
 
   saveOrUpdateFee(fee) {
     fee = wrapper.fee.wrap(fee)
-    return Realm.open(this._config).then(realm => realm.write(() => { realm.create('Fee', fee, true) }))
+    return Realm.open(this._config).then(realm => realm.write(() => {
+      realm.create('Fee', fee, true)
+    }))
   }
 
   getExchange(coinType) {
-    let filterQuery = RealmDB.makeQuery({ coinType })
+    let filterQuery = RealmDB.makeQuery({coinType})
     return Realm.open(this._config).then(realm => {
       let exchange = realm.objects('Exchange').filtered(filterQuery)[0]
       if (!exchange) return null
@@ -218,16 +220,27 @@ class RealmDB extends IDatabase {
 
   saveOrUpdateExchange(exchange) {
     exchange = wrapper.exchange.wrap(exchange)
-    return Realm.open(this._config).then(realm => realm.write(() => { realm.create('Exchange', exchange, true) }))
+    return Realm.open(this._config).then(realm => realm.write(() => {
+      realm.create('Exchange', exchange, true)
+    }))
   }
 
   getSettings(key) {
     return Realm.open(this._config).then(realm => {
-      let obj = realm.objectForPrimaryKey('Settings',key)
+      let obj = realm.objectForPrimaryKey('Settings', key)
       if (obj !== undefined) {
         return obj.value
       }
       return null
+    })
+  }
+
+  deleteAllSettings() {
+    return Realm.open(this._config).then(realm => {
+      realm.write(() => {
+        let settings = realm.objects('Settings')
+        realm.delete(settings)
+      })
     })
   }
 
@@ -237,7 +250,9 @@ class RealmDB extends IDatabase {
 
   saveOrUpdateSettings(key, value) {
     let settings = {key, value}
-    return Realm.open(this._config).then(realm => realm.write(() => { realm.create('Settings', settings, true) }))
+    return Realm.open(this._config).then(realm => realm.write(() => {
+      realm.create('Settings', settings, true)
+    }))
   }
 
   getPreference(key) {
@@ -246,7 +261,9 @@ class RealmDB extends IDatabase {
 
   saveOrUpdatePreference(key, value) {
     let settings = {key, value}
-    return Realm.open(this._config).then(realm => realm.write(() => { realm.create('Preference', settings, true) }))
+    return Realm.open(this._config).then(realm => realm.write(() => {
+      realm.create('Preference', settings, true)
+    }))
   }
 
   static makeQuery(filter = {}) {
@@ -261,4 +278,5 @@ class RealmDB extends IDatabase {
     return filterQuery
   }
 }
+
 export default RealmDB
