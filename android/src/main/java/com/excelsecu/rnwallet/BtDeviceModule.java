@@ -1,5 +1,6 @@
 package com.excelsecu.rnwallet;
 
+import android.bluetooth.BluetoothAdapter;
 import android.support.annotation.Nullable;
 
 import com.excelsecu.eshdwallet.EsHDWallet;
@@ -41,6 +42,9 @@ public class BtDeviceModule extends ReactContextBaseJavaModule implements IEsDev
     private static final int STATUS_DISCONNECTED = 0;
     private static final int STATUS_CONNECTING = 5;
     private static final int STATUS_CONNECTED = 10;
+    private static final int STATUS_BLUETOOTH_ON = 20;
+    private static final int STATUS_BLUETOOTH_OFF = 21;
+
     private static final String TAG = BtDeviceModule.class.getSimpleName();
 
     private EsHDWallet mEsWallet;
@@ -73,6 +77,8 @@ public class BtDeviceModule extends ReactContextBaseJavaModule implements IEsDev
         constants.put("disconnected", STATUS_DISCONNECTED);
         constants.put("connecting", STATUS_CONNECTING);
         constants.put("connected", STATUS_CONNECTED);
+        constants.put("bluetooth_on", STATUS_BLUETOOTH_ON);
+        constants.put("bluetooth_off", STATUS_BLUETOOTH_OFF);
         return constants;
     }
 
@@ -188,6 +194,20 @@ public class BtDeviceModule extends ReactContextBaseJavaModule implements IEsDev
             default:
         }
     }
+
+    @ReactMethod
+    public void getBleState(Promise promise) {
+
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter != null) {
+            if (!bluetoothAdapter.isEnabled()) {
+                promise.resolve(STATUS_BLUETOOTH_OFF);
+            } else {
+                promise.resolve(STATUS_BLUETOOTH_ON);
+            }
+        }
+    }
+
 
     private String sendApduSync(String hexApdu) throws EsException {
         EsDevice esDevice = mEsWallet.getDevice();

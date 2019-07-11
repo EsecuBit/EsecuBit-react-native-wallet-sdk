@@ -77,6 +77,11 @@ class BtTransmitter {
     return this._device.getState()
   }
 
+  getBleState() {
+    return this._device.getBleState()
+  }
+
+
   getName() {
     return (this._info && this._info.sn) || null
   }
@@ -97,4 +102,6 @@ BtTransmitter.connecting = EsBtDevice.connecting
 BtTransmitter.disconnected = EsBtDevice.disconnected
 BtTransmitter.authenticating = EsBtDevice.authenticating
 BtTransmitter.authenticated = EsBtDevice.authenticated
+BtTransmitter.bluetooth_on = EsBtDevice.bluetooth_on
+BtTransmitter.bluetooth_off = EsBtDevice.bluetooth_off
 export default BtTransmitter

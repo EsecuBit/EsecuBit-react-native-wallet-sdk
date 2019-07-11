@@ -23,10 +23,15 @@ class EsBtDevice {
       D.dispatch(() => this._scanListener(event.error, info))
     });
   }
-  
+
   getState() {
     return this._device.getState()
   }
+
+  getBleState() {
+    return this._device.getBleState()
+  }
+
 
   startScan(callback) {
     this._scanListener = callback
@@ -41,7 +46,7 @@ class EsBtDevice {
   connect(info) {
     this._device.connect(info)
   }
-  
+
   disconnect() {
     this._device.disconnect()
   }
@@ -73,4 +78,6 @@ EsBtDevice.connecting = BtDevice.connecting
 EsBtDevice.disconnected = BtDevice.disconnected
 EsBtDevice.authenticating = BtDevice.authenticating
 EsBtDevice.authenticated = BtDevice.authenticated
+EsBtDevice.bluetooth_on = BtDevice.bluetooth_on
+EsBtDevice.bluetooth_off = BtDevice.bluetooth_off
 export default EsBtDevice
