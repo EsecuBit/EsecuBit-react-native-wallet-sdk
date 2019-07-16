@@ -1,6 +1,6 @@
-import RealmDB from '../db/RealmDB'
 import { Coin } from '../common/Constants'
 import { D } from 'esecubit-wallet-sdk'
+import RealmDB from '../db/RealmDB'
 import CoinUtil from './CoinUtil'
 
 const realmDB = new RealmDB('default')
@@ -42,7 +42,7 @@ class PreferenceUtil {
     }
   }
 
-  static async updateLanguagePreference(label: string, index: number) {
+  static async updateLanguagePrefrence(label: string, index: number) {
     let value = {
       label: label,
       index: index
@@ -71,9 +71,26 @@ class PreferenceUtil {
   static async getDefaultDevice() {
     let obj = await realmDB.getPreference('sn')
     if (obj) {
-      return JSON.parse(obj.value)
+      return JSON.parse(obj)
     }
     return obj
+  }
+
+  static async getPairedDevices() {
+    let obj = await realmDB.getSettings('paired')
+    if (obj) {
+      return JSON.parse(obj)
+    }
+    return obj
+  }
+
+  static async addPairedDevice(device: []) {
+    let devices = await this.getPairedDevices()
+    if (!devices) {
+      devices = []
+    }
+    devices.push(device)
+    realmDB.saveOrUpdateSettings('paired', JSON.stringify(devices))
   }
 }
 export default PreferenceUtil
