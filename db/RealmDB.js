@@ -277,6 +277,21 @@ class RealmDB extends IDatabase {
     }
     return filterQuery
   }
+
+  static async getPairedDevices() {
+    let pairedDevice = []
+    await Realm.open(this._config).then(realm => {
+      let settings = realm.objects('Settings')
+      let objects = settings.filtered('key BEGINSWITH "netBankFeature"')
+      objects.map(it => {
+        if (it) {
+          let sn = it.key.split('_')[1]
+          pairedDevice.push(sn)
+        }
+      })
+    })
+    return pairedDevice
+  }
 }
 
 export default RealmDB
