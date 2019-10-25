@@ -67,7 +67,7 @@ export default class StringUtil {
    */
   static formatTimeStamp(time, shortFormat=false) {
     let date = new Date(time)
-    let yyyy = date.getFullYear()
+    let yyyy = date.getFullYear().toString().slice(2)
     let month = date.getMonth() + 1
     let MM = parseInt(month / 10) ? month : '0' + month
     let dd = parseInt(date.getDate() / 10)
