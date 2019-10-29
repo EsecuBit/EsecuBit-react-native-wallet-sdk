@@ -29,12 +29,23 @@ export default class StringUtil {
   static formatCryptoCurrency(num) {
     num = num.toString()
     let index = num.indexOf('.')
+    let originDecimalDigit = 0
+    let decimalValue = 0
+    let decimalDigit = 0
+    let integerDigit = 10
     if (index !== -1) {
-      if (num.length - index > 9) {
-        return num.slice(0, index + 9) + '...'
-      }
+      originDecimalDigit = num.length - index - 1
+      decimalValue = "0" + num.slice(index, num.length)
+      integerDigit = index < 10 ? index : 10
+      decimalDigit = parseFloat(decimalValue) === 0 ? 0 : 10 - integerDigit
+
     }
-    return num.toString()
+    if (decimalDigit === 0) {
+      return num.slice(0, integerDigit -1)
+    }else {
+      let tailStr = originDecimalDigit >= decimalDigit ? "..." : ""
+      return num.slice(0, integerDigit + decimalDigit)+ tailStr
+    }
   }
 
   /**
