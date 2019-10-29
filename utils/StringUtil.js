@@ -44,7 +44,8 @@ export default class StringUtil {
       return num.slice(0, integerDigit -1)
     }else {
       let tailStr = originDecimalDigit >= decimalDigit ? "..." : ""
-      return num.slice(0, integerDigit + decimalDigit)+ tailStr
+      let spilt = integerDigit === index ? integerDigit + decimalDigit + 1 : integerDigit + decimalDigit
+      return num.slice(0, spilt)+ tailStr
     }
   }
 
