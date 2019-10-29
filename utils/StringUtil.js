@@ -32,12 +32,12 @@ export default class StringUtil {
     let originDecimalDigit = 0
     let decimalValue = 0
     let decimalDigit = 0
-    let integerDigit = 10
+    let integerDigit = 9
     if (index !== -1) {
       originDecimalDigit = num.length - index - 1
       decimalValue = "0" + num.slice(index, num.length)
-      integerDigit = index < 10 ? index : 10
-      decimalDigit = parseFloat(decimalValue) === 0 ? 0 : 10 - integerDigit
+      integerDigit = index < 9 ? index : 9
+      decimalDigit = parseFloat(decimalValue) === 0 ? 0 : 9 - integerDigit
 
     }
     if (decimalDigit === 0) {
