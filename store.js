@@ -5,9 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const middleware = createReactNavigationReduxMiddleware(
   state => state.nav,
 );
-const store = createStore(AppReducer, composeWithDevTools(
+export const store = createStore(AppReducer, composeWithDevTools(
   applyMiddleware(middleware),
   // other store enhancers if any
 ));
-
-export default store;
