@@ -1,6 +1,6 @@
 {
   "name": "esecubit-react-native-wallet-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SDK For EsecuBit React Native Wallet App",
   "main": "index.js",
   "keywords": [
