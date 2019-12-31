@@ -31,3 +31,10 @@ export function setLegalCurrencyUnit(unit: string) {
     unit: unit
   }
 }
+
+export function setScanAddress(unit: string) {
+  return {
+    type: ActionType.SET_SCAN_ADDRESS,
+    unit: unit
+  }
+}

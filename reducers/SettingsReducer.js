@@ -4,7 +4,8 @@ const initialState = {
   btcUnit: '',
   ethUnit: '',
   eosUnit: '',
-  legalCurrencyUnit: ''
+  legalCurrencyUnit: '',
+  scanAddress: ''
 }
 
 export default function settingsReducer(state = initialState, action) {
@@ -28,6 +29,11 @@ export default function settingsReducer(state = initialState, action) {
       return {
         ...state,
         eosUnit: action.unit
+      }
+    case ActionType.SET_SCAN_ADDRESS:
+      return {
+        ...state,
+        scanAddress: action.scanAddress
       }
     default:
       return state
