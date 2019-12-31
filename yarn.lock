@@ -324,9 +324,9 @@ elliptic@^6.0.0, elliptic@^6.4.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-"esecubit-wallet-sdk@git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git#develop":
-  version "0.9.3"
-  resolved "git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git#994bf5606b429c852d1a1d512725a3cde40575dc"
+"esecubit-wallet-sdk@git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git":
+  version "0.9.4"
+  resolved "git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git#89d1d1058ef752c41d752213843863d0c01a2e3e"
   dependencies:
     axios "^0.19.0"
     bech32 "^1.1.3"
