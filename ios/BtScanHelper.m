@@ -80,13 +80,15 @@
 
 - (void)requestOpenBluetooth {
   NSString *title;
+  NSString *button;
   if (self.bluetoothState == CBManagerStateUnauthorized) {
     title = NSLocalizedString(@"open_bt_title_unauthorized", comment:"");
+    button = NSLocalizedString(@"open_bt_button", comment:"");
   } else {
     title = NSLocalizedString(@"open_bt_title", comment:"");
+    button = NSLocalizedString(@"close", comment:"");
   }
   NSString *message = NSLocalizedString(@"open_bt_message", comment:"");
-  NSString *button = NSLocalizedString(@"open_bt_button", comment:"");
   self.alertView = [[UIAlertView alloc] initWithTitle:title
                                      message:message
                                     delegate:self
@@ -98,10 +100,12 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
   NSLog(@"clickButtonAtIndex:%ld", buttonIndex);
-  NSURL *url = [NSURL URLWithString:@"app-Prefs:root=Bluetooth"];
-  if ([[UIApplication sharedApplication] canOpenURL:url]) {
-    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
-  }
+    if (self.bluetoothState == CBManagerStateUnauthorized) {
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+          [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        }
+    }
 }
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI
