@@ -71,20 +71,7 @@ class PreferenceUtil {
   static async getDefaultDevice() {
     let obj = await realmDB.getPreference('sn')
     if (obj) {
-      return JSON.parse(obj)
-    }
-    return {}
-  }
-
-  static async setSupportedCoinTypes(obj) {
-    obj = JSON.stringify(obj)
-    realmDB.saveOrUpdatePreference('coinTypes', obj)
-  }
-
-  static async getSupportedCoinTypes() {
-    let obj = await realmDB.getPreference('coinTypes')
-    if (obj) {
-      return JSON.parse(obj)
+      return JSON.parse(obj.value)
     }
     return {}
   }
