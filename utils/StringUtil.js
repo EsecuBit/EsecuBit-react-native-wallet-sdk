@@ -4,7 +4,7 @@ export default class StringUtil {
    * @param num
    * @returns {string}
    */
-  static formatLegalCurrency(num: number) {
+  static formatLegalCurrency(num) {
     num = num.toString().replace(/\$|\,/g, '')
     if (isNaN(num)) {
       num = '0'

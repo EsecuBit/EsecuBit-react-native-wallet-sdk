@@ -5,7 +5,7 @@ import CoinUtil from './CoinUtil'
 
 const realmDB = new RealmDB('default')
 class PreferenceUtil {
-  static async getCurrencyUnit(key: string) {
+  static async getCurrencyUnit(key) {
     let defaultUnit = PreferenceUtil.prototype._getDefaultUnit(key)
     let result = await realmDB.getPreference(key)
     if (result) {
@@ -20,7 +20,7 @@ class PreferenceUtil {
     }
   }
 
-  _getDefaultUnit(coinType: string) {
+  _getDefaultUnit(coinType) {
     switch (coinType) {
       case Coin.btc:
         return D.unit.btc.BTC
@@ -42,7 +42,7 @@ class PreferenceUtil {
     }
   }
 
-  static async updateLanguagePrefrence(label: string, index: number) {
+  static async updateLanguagePrefrence(label, index) {
     let value = {
       label: label,
       index: index
@@ -50,7 +50,7 @@ class PreferenceUtil {
     realmDB.saveOrUpdatePreference('language', JSON.stringify(value))
   }
 
-  static async updateCurrencyUnit(key: string, label: string, index: number) {
+  static async updateCurrencyUnit(key, label, index) {
     let value = {
       label: label,
       index: index
@@ -58,12 +58,12 @@ class PreferenceUtil {
     realmDB.saveOrUpdatePreference(key, JSON.stringify(value))
   }
 
-  static async getCryptoCurrencyUnit(coinType: string) {
+  static async getCryptoCurrencyUnit(coinType) {
     let key = CoinUtil.getRealCoinType(coinType)
     return await this.getCurrencyUnit(key)
   }
 
-  static async setDefaultDevice(obj: {}) {
+  static async setDefaultDevice(obj) {
     obj = JSON.stringify(obj)
     realmDB.saveOrUpdatePreference('sn', obj)
   }
@@ -73,7 +73,20 @@ class PreferenceUtil {
     if (obj) {
       return JSON.parse(obj)
     }
-    return obj
+    return {}
+  }
+
+  static async setSupportedCoinTypes(obj) {
+    obj = JSON.stringify(obj)
+    realmDB.saveOrUpdatePreference('coinTypes', obj)
+  }
+
+  static async getSupportedCoinTypes() {
+    let obj = await realmDB.getPreference('coinTypes')
+    if (obj) {
+      return JSON.parse(obj)
+    }
+    return {}
   }
 }
 export default PreferenceUtil
