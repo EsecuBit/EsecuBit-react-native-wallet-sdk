@@ -4,6 +4,7 @@ const RNProvider = {
     Config: {},
     InitialRouteName: 'Handler'
   },
+  I18n: {},
 }
 
 export default RNProvider
