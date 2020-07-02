@@ -42,7 +42,7 @@ class PreferenceUtil {
     }
   }
 
-  static async updateLanguagePrefrence(label, index) {
+  static async updateLanguagePreference(label, index) {
     let value = {
       label: label,
       index: index
