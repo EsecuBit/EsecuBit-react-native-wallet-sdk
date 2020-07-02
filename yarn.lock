@@ -324,6 +324,10 @@ elliptic@^6.0.0, elliptic@^6.4.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+"esecubit-wallet-i18n@git+https://github.com/EsecuBit/EsecuBit-wallet-i18n.git":
+  version "1.0.0"
+  resolved "git+https://github.com/EsecuBit/EsecuBit-wallet-i18n.git#edffda91d571319babc280c1ad0004dea315046a"
+
 "esecubit-wallet-sdk@git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git":
   version "0.9.4"
   resolved "git+https://github.com/EsecuBit/EsecuBit-wallet-sdk.git#89d1d1058ef752c41d752213843863d0c01a2e3e"
