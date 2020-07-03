@@ -45,3 +45,10 @@ export function setSupportedCoinTypes(coinTypes) {
     coinTypes: coinTypes
   }
 }
+
+export function setWalletName(name) {
+  return {
+    type: ActionType.SET_WALLET_NAME,
+    walletName: name
+  }
+}

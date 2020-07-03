@@ -1,4 +1,5 @@
 import ActionType from '../actions/ActionType'
+import {D} from 'esecubit-wallet-sdk'
 
 const initialState = {
   btcUnit: '',
@@ -7,7 +8,8 @@ const initialState = {
   legalCurrencyUnit: '',
   scanAddress: '',
   // 默认支持btc, eth
-  coinTypes: ['btc', 'eth']
+  coinTypes: [D.coin.main.btc, D.coin.main.eth],
+  walletName: D.wallet.s300
 }
 
 export default function settingsReducer(state = initialState, action) {
@@ -41,6 +43,11 @@ export default function settingsReducer(state = initialState, action) {
       return {
         ...state,
         coinTypes: action.coinTypes
+      }
+    case ActionType.SET_WALLET_NAME:
+      return {
+        ...state,
+        walletName: action.walletName
       }
     default:
       return state
