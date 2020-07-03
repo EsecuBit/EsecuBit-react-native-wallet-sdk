@@ -5,7 +5,9 @@ const initialState = {
   ethUnit: '',
   eosUnit: '',
   legalCurrencyUnit: '',
-  scanAddress: ''
+  scanAddress: '',
+  // 默认支持btc, eth
+  coinTypes: ['btc', 'eth']
 }
 
 export default function settingsReducer(state = initialState, action) {
@@ -34,6 +36,11 @@ export default function settingsReducer(state = initialState, action) {
       return {
         ...state,
         scanAddress: action.scanAddress
+      }
+    case ActionType.SET_SUPPORTED_COIN_TYPES:
+      return {
+        ...state,
+        coinTypes: action.coinTypes
       }
     default:
       return state

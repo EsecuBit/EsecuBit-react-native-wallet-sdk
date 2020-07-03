@@ -3,7 +3,7 @@ import ActionType from './ActionType'
 import CoinUtil from '../utils/CoinUtil'
 import { Coin } from '../common/Constants'
 
-export function setCryptoCurrencyUnit(coinType: string, unit: string) {
+export function setCryptoCurrencyUnit(coinType, unit) {
   coinType = CoinUtil.getRealCoinType(coinType)
   let actionType = ''
   switch (coinType) {
@@ -25,16 +25,23 @@ export function setCryptoCurrencyUnit(coinType: string, unit: string) {
   }
 }
 
-export function setLegalCurrencyUnit(unit: string) {
+export function setLegalCurrencyUnit(unit) {
   return {
     type: ActionType.SET_LEGAL_CURRENCY_UNIT,
     unit: unit
   }
 }
 
-export function setScanAddress(unit: string) {
+export function setScanAddress(unit) {
   return {
     type: ActionType.SET_SCAN_ADDRESS,
     unit: unit
+  }
+}
+
+export function setSupportedCoinTypes(coinTypes) {
+  return {
+    type: ActionType.SET_SUPPORTED_COIN_TYPES,
+    coinTypes: coinTypes
   }
 }
