@@ -9,7 +9,7 @@ const initialState = {
   scanAddress: '',
   // 默认支持btc, eth
   coinTypes: [D.coin.main.btc, D.coin.main.eth],
-  walletName: D.wallet.s300
+  walletName: ''
 }
 
 export default function settingsReducer(state = initialState, action) {
